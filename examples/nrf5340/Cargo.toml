@@ -1,0 +1,16 @@
+[package]
+name = "spi-flash-embassy-nrf5340-example"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+spi-flash-for-embassy = { path = "../..", features = ["defmt"] }
+embassy-executor = { version = "0.10.0", features = ["platform-cortex-m", "executor-thread", "defmt"] }
+embassy-time = { version = "0.5.1", features = ["defmt", "tick-hz-32_768"] }
+embassy-nrf = { version = "0.10.0", default-features = false, features = ["defmt", "nrf5340-app-s", "time", "gpiote", "time-driver-rtc1"] }
+defmt = "1.0.1"
+defmt-rtt = "1.0.0"
+cortex-m = { version = "0.7.7", features = ["inline-asm", "critical-section-single-core"] }
+cortex-m-rt = "0.7.5"
+panic-probe = { version = "1.0.0", features = ["print-defmt"] }

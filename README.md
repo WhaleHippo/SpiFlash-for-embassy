@@ -62,5 +62,13 @@ Embassy STM32에서의 연결 방향
 - 이 라이브러리는 표준적인 SPI NOR command set을 기준으로 합니다.
 - 특수 보호 비트, quad mode, suspend/resume, SFDP parsing 등은 아직 포함하지 않았습니다.
 
+예제
+- `examples/stm32f401re/src/bin/spi_flash.rs`
+- `examples/nrf5340/src/bin/spi_flash.rs`
+
+예제 빌드
+- STM32F401RE: `cargo check --target thumbv7em-none-eabihf --manifest-path examples/stm32f401re/Cargo.toml --bin spi_flash`
+- nRF5340: `cargo check --target thumbv8m.main-none-eabihf --manifest-path examples/nrf5340/Cargo.toml --bin spi_flash`
+
 검증
 - `cargo test`
